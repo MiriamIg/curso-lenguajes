@@ -1,20 +1,23 @@
-/* VISUALIZA EL NUMERO DE RENGLONES QUE CONTIENE LA PAGINA URL
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package capitulo8.inputoutput;
 
-import java.net.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  *
- * @author Miriam
+ * @author T-101
  */
-public class MiprimeraConexion {
-    public static void main(String[] args)throws Exception{
-        //primero vamos a usar una conexion que se llame url 
+public class ServicioLeerEstacion {
+public static String generarValor(String Etiqueta) throws Exception {
+      String valor="Sin valor";
         
         URL url =new URL("http://www.weatherlink.com/user/sierraguadalupe/index.php?view=summary&headers=0");
             url.openConnection();
@@ -38,19 +41,20 @@ public class MiprimeraConexion {
                  
              }
           
-             if(lineaActual.contains("Outside Temp")){
+             if(lineaActual.contains(Etiqueta)){
                  encontrado=true;
                 
                  System.out.println("Encontrado!!!!");
                  milinea=1;
              }
                  
-           
+          
            
         }
      
-      
-               
-       
+       return valor;
     }
+
+   
+    
 }
