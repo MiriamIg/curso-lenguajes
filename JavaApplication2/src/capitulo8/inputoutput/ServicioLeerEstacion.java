@@ -32,10 +32,12 @@ public static String generarValor(String Etiqueta) throws Exception {
             int milinea=0;
      
          while ((lineaActual=reader.readLine())!=null) {
+             
              if(encontrado && milinea<=4){
                  int indice= lineaActual.indexOf(">");
                  int indice2=lineaActual.indexOf("</");
-                 String tempActual=lineaActual.substring(indice, indice2);
+                 String tempActual=lineaActual.substring(indice+1, indice2);
+                 valor=tempActual;
                  System.out.println(tempActual);
                  milinea ++;
                  
