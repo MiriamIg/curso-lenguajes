@@ -14,19 +14,7 @@ public class Clientes {
     private String Aparterno ;
     private int edad;
     private float sueldo;
-    private String direccion;
-    
-
-    public Clientes(String nombre, String Aparterno, int edad, float sueldo, String direccion) {
-        this.nombre = nombre;
-        this.Aparterno = Aparterno;
-        this.edad = edad;
-        this.sueldo = sueldo;
-        this.direccion = direccion;
-    }
-    
-   
-                  
+    private Direccion direccion;
 
     /**
      * @return the nombre
@@ -87,29 +75,15 @@ public class Clientes {
     /**
      * @return the direccion
      */
-    public String getDireccion() {
+    public Direccion getDireccion() {
         return direccion;
     }
 
     /**
      * @param direccion the direccion to set
      */
-    public void setDireccion(String direccion) {
+    public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
-
-    private static class direccion {
-
-        public direccion() {
-            int numero;
-            int calle;
-            int municipio;
-            int telefono;
-            
-        }
-
-       
-    }
-            
     
 }

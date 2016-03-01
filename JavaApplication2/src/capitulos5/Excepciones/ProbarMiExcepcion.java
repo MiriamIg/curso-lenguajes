@@ -5,26 +5,24 @@
  */
 package capitulos5.Excepciones;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
- * @author T-101
+ * @author Miriam
  */
 public class ProbarMiExcepcion {
-    public static void main(String[] args){                
-    try {
-        Cliente c=new Cliente();
-        
-           c.setEdad(-13);                                                 //ValidarEdad valida=new  ValidarEdad();
-                                                             //valida.checarEdadNegativa(-10);
-        } catch (ValorNoNegativoException ex) {
-            System.out.println(ex.getMessage());
-        }
-    finally{
-        System.out.println("Se ejecuta se lance o no la excepcion");
+    public static void main(String[] args) {
+       try{ 
+        ClienteMenorDeEdad c=new ClienteMenorDeEdad();
+        c.setEdad(-8);
+          }
+       
+       catch(ValorNoNegativoExcepcion | MenorDeEdadExcepcion ex){
+           System.out.println(ex.getMessage());}
+       finally{
+           System.out.println("Siempre se ejcuta");
+           
+       }
     }
-    }
-    
+  
 }

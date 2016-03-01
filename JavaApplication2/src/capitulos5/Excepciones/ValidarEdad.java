@@ -7,12 +7,14 @@ package capitulos5.Excepciones;
 
 /**
  *
- * @author T-101
+ * @author Miriam
  */
 public class ValidarEdad {
-    public void checarEdadNegativa(int edad) throws ValorNoNegativoException{                   // clase qValidarEdad contenga un metodo  checharEdadNegativa(int edad)
-       
-        if(edad<0) {throw new ValorNoNegativoException();
-        }
+    public static void checarEdadNegativa(int edad)throws ValorNoNegativoExcepcion{
+       if(edad<0)throw new ValorNoNegativoExcepcion();
+    }
+    
+    public static void checarMenorEdad(int edad)throws MenorDeEdadExcepcion{
+        if(edad<18)throw new MenorDeEdadExcepcion();
     }
 }
