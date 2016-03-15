@@ -12,6 +12,7 @@ import java.util.*;
  */
 public class GeneradoPreguntas {
     public static ArrayList<Pregunta> obtenerPreguntas(){
+        
         Opcion op1=new Opcion("Moscu",true);
         Opcion op2=new Opcion("Florencia ", false);
         Opcion op3=new Opcion("Paris", false);
@@ -23,9 +24,7 @@ public class GeneradoPreguntas {
         Opcion op3p2=new Opcion("Seul", false);
         Opcion op4p2=new Opcion("Pyonjiang", false);
         
-        
-        
-        
+                
         ArrayList<Opcion>   opciones=new ArrayList<Opcion>();
                             opciones.add(op1);
                             opciones.add(op2);
