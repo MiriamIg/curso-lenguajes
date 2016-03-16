@@ -10,14 +10,37 @@ import java.util.*;
  * @author Miriam
  */
 public class EvaluaRespuesta {
+    private boolean bandera;
+    public void evaluar(ArrayList<Opcion> opciones){
+        
     
- public static void main(String []args){
+    for(Opcion e:opciones){
+        if(e.getEstatus()==true){         
+        bandera=true; 
+                
+        System.out.println("Es correcto ");
+       }
+        else{
+        bandera=false ;     
+            System.out.println(":( sorry ");
+        }
+        
+ 
+    }
    
- ArrayList<Pregunta> p=GeneradoPreguntas.obtenerPreguntas();
-     System.out.println(p.contains(p));
-
-}
 
     
     
+
+}    
+
+    public boolean isBandera() {
+        return bandera;
+    }
+
+    public void setBandera(boolean bandera) {
+        this.bandera = bandera;
+    }
+
+  
 }

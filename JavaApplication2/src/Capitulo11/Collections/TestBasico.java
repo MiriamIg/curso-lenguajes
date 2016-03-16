@@ -24,6 +24,7 @@ public class TestBasico extends javax.swing.JFrame {
     Radio1.setText(preguntas.get(0).getOpciones().get(1).getTituloOpc());
     Radio2.setText(preguntas.get(0).getOpciones().get(2).getTituloOpc());  
     Radio3.setText(preguntas.get(0).getOpciones().get(3).getTituloOpc());
+    
     }
 
     /**
@@ -45,6 +46,7 @@ public class TestBasico extends javax.swing.JFrame {
         Radio3 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        checa = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +62,11 @@ public class TestBasico extends javax.swing.JFrame {
 
         buttonGroup1.add(Radio1);
         Radio1.setText("jRadioButton2");
+        Radio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Radio1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(Radio2);
         Radio2.setText("jRadioButton3");
@@ -75,6 +82,8 @@ public class TestBasico extends javax.swing.JFrame {
         });
 
         jButton2.setText("Siguiente Pregunta");
+
+        checa.setText(".........................");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -95,6 +104,10 @@ public class TestBasico extends javax.swing.JFrame {
                     .addComponent(Radio2)
                     .addComponent(Radio3))
                 .addContainerGap(95, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(checa)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,7 +126,9 @@ public class TestBasico extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(checa)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,7 +158,26 @@ public class TestBasico extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
+    
+    EvaluaRespuesta evalua=new EvaluaRespuesta();
+                    evalua.isBandera();
+                
+ 
+        if(Radio0.isSelected()){           
+         checa.setText("si es ");
+        }
+        else{checa.setText("Esto no es ");}
+        
+    
+       
+                                 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+        
+        
+    private void Radio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Radio1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,6 +222,7 @@ public class TestBasico extends javax.swing.JFrame {
     private javax.swing.JRadioButton Radio3;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JLabel checa;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;

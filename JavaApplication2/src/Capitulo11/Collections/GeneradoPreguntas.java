@@ -13,10 +13,10 @@ import java.util.*;
 public class GeneradoPreguntas {
     public static ArrayList<Pregunta> obtenerPreguntas(){
         
-        Opcion op1=new Opcion("Moscu",true);
+        Opcion op1=new Opcion("Camboya",false);
         Opcion op2=new Opcion("Florencia ", false);
         Opcion op3=new Opcion("Paris", false);
-        Opcion op4=new Opcion("Londres", false);
+        Opcion op4=new Opcion("Moscu", true);
         
                 
         Opcion op1p2=new Opcion("Tokio",false);
@@ -49,11 +49,7 @@ public class GeneradoPreguntas {
         
                             
         return preguntas;
-        
-        
-    
-        
-        
+           
     }
     
 }
