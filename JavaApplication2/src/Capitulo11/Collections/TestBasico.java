@@ -5,19 +5,21 @@
  */
 package Capitulo11.Collections;
 import java.util.*;
-
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 /**
  *
  * @author T-101
  */
 public class TestBasico extends javax.swing.JFrame {
-
-    /**
+ArrayList<Pregunta> preguntas=GeneradoPreguntas.obtenerPreguntas();
+JRadioButton radios []=new JRadioButton[4];
+     /**
      * Creates new form TestBasico
      */
     public TestBasico() {
         initComponents();
-     ArrayList<Pregunta> preguntas=GeneradoPreguntas.obtenerPreguntas();
+     
     
     Pregunta.setText(preguntas.get(0).getTitulo());
     Radio0.setText(preguntas.get(0).getOpciones().get(0).getTituloOpc());
@@ -159,14 +161,8 @@ public class TestBasico extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     
-    EvaluaRespuesta evalua=new EvaluaRespuesta();
-                    evalua.isBandera();
-                
- 
-        if(Radio0.isSelected()){           
-         checa.setText("si es ");
-        }
-        else{checa.setText("Esto no es ");}
+ boolean respuesta=GeneradoPreguntas.checarRespuesta(preguntas.get(0),radios);
+ JOptionPane.showConfirmDialog(rootPane,  "Respuesta : "+ respuesta);
         
     
        

@@ -35,7 +35,7 @@ public class Opcion {
     /**
      * @return the estatus
      */
-    public Boolean getEstatus() {
+    public Boolean isEstatus() {
         return estatus;
     }
 

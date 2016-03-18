@@ -5,7 +5,7 @@
  */
 package Capitulo11.Collections;
 import java.util.*;
-
+import javax.swing.*;
 /**
  *
  * @author T-101
@@ -51,5 +51,28 @@ public class GeneradoPreguntas {
         return preguntas;
            
     }
+    
+    
+public static boolean checarRespuesta(Pregunta p,JRadioButton[]radios){
+
+boolean respuesta=false;
+String seleccion="";
+    
+        for(JRadioButton radio:radios){
+            if(radio.isSelected()){
+                seleccion=radio.getText();
+                }
+
+        }
+
+        for (Opcion  o:p.getOpciones()){
+            if(o.isEstatus()){
+              if(o.getTituloOpc().equals(respuesta))respuesta=true;
+            }
+
+        }
+    return respuesta;    
+}
+
     
 }

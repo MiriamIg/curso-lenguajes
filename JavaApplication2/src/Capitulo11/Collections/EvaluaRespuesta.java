@@ -15,7 +15,7 @@ public class EvaluaRespuesta {
         
     
     for(Opcion e:opciones){
-        if(e.getEstatus()==true){         
+        if(e.isEstatus()){         
         bandera=true; 
                 
         System.out.println("Es correcto ");
