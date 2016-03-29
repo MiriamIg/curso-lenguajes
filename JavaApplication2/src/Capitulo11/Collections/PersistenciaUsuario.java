@@ -33,7 +33,7 @@ public class PersistenciaUsuario {
     }
     public void guardar(Usuario u)throws Exception{
         File f=new File("archivaldo.raton");
-        if(f.exists())usuarios=buscarTodos();
+        if(f.exists())usuarios=buscarTodos();//guarda registro por registro y no borren los anteriores 
         FileOutputStream fos=new FileOutputStream(f);
         ObjectOutputStream oos=new ObjectOutputStream(fos);
         usuarios.add(u);
