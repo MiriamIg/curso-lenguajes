@@ -19,6 +19,8 @@ public class PersistenciaUsuario {
     public PersistenciaUsuario(ArrayList<Usuario> usuarios) {
         usuarios = new ArrayList<>();
     }
+
+   
     //Primero poneos el metodo de buscar todos
     ArrayList<Usuario> buscarTodos ()throws Exception{
         //Paso n°1:Leer el archivo donde esta guardado el arraylist 
