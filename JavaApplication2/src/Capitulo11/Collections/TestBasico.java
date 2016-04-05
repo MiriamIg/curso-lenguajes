@@ -12,7 +12,7 @@ import javax.swing.JRadioButton;
  * @author T-101
  */
 public class TestBasico extends javax.swing.JFrame {
-ArrayList<Pregunta> preguntas=GeneradoPreguntas.obtenerPreguntas();
+ArrayList<Pregunta> preguntas;
 JRadioButton radios []=new JRadioButton[4];
      /**
      * Creates new form TestBasico
