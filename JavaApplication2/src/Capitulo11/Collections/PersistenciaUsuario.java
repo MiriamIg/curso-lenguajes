@@ -14,9 +14,9 @@ import java.util.ArrayList;
  */
 public class PersistenciaUsuario {
     ArrayList<Usuario>   usuarios;
-    //se realiza el constructor para no lanzar el nul ponter exception 
+    //se realiza el constructor para no lanzar el null ponter exception 
 
-    public PersistenciaUsuario(ArrayList<Usuario> usuarios) {
+    public PersistenciaUsuario() {
         usuarios = new ArrayList<>();
     }
 

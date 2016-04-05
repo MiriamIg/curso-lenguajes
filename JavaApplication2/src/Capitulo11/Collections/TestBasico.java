@@ -84,6 +84,11 @@ JRadioButton radios []=new JRadioButton[4];
         });
 
         jButton2.setText("Siguiente Pregunta");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         checa.setText(".........................");
 
@@ -174,6 +179,10 @@ JRadioButton radios []=new JRadioButton[4];
     private void Radio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Radio1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
