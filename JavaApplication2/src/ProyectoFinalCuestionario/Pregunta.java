@@ -4,14 +4,19 @@
  * and open the template in the editor.
  */
 package ProyectoFinalCuestionario;
-
+import java.util.*;
 /**
  *
  * @author T-101
  */
 public class Pregunta {
     private String pregunta;
-    private Opcion opciones;
+    private ArrayList<Opcion> opciones;
+
+    public Pregunta(String pregunta, ArrayList<Opcion> opciones) {
+        this.pregunta = pregunta;
+        this.opciones = opciones;
+    }
 
     public String getPregunta() {
         return pregunta;
@@ -21,13 +26,15 @@ public class Pregunta {
         this.pregunta = pregunta;
     }
 
-    public Opcion getOpciones() {
+    public ArrayList<Opcion> getOpciones() {
         return opciones;
     }
 
-    public void setOpciones(Opcion opciones) {
+    public void setOpciones(ArrayList<Opcion> opciones) {
         this.opciones = opciones;
     }
+
+    
            
     
 }

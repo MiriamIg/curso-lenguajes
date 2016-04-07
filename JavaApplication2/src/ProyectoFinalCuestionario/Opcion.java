@@ -10,23 +10,34 @@ package ProyectoFinalCuestionario;
  * @author T-101
  */
 public class Opcion {
-    private String titulo;
-    private Boolean status;
+    private String opc;
+    private int puntos;
 
-    public String getTitulo() {
-        return titulo;
+    public Opcion(String opc, int puntos) {
+        this.opc = opc;
+        this.puntos = puntos;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public String getOpc() {
+        return opc;
     }
 
-    public Boolean getStatus() {
-        return status;
+    public void setOpc(String opc) {
+        this.opc = opc;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public int getPuntos() {
+        return puntos;
     }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+    
+    
+
+    
+
+    
     
 }
