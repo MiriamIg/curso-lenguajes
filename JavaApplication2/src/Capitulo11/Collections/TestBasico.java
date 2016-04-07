@@ -14,18 +14,18 @@ import javax.swing.JRadioButton;
 public class TestBasico extends javax.swing.JFrame {
 ArrayList<Pregunta> preguntas;
 JRadioButton radios []=new JRadioButton[4];
+int numero=0;
      /**
      * Creates new form TestBasico
      */
     public TestBasico() {
         initComponents();
      
+    preguntas=
+     GeneradoPreguntas.obtenerPreguntas();
+    iniciarTodas();
+   
     
-    Pregunta.setText(preguntas.get(0).getTitulo());
-    Radio0.setText(preguntas.get(0).getOpciones().get(0).getTituloOpc());
-    Radio1.setText(preguntas.get(0).getOpciones().get(1).getTituloOpc());
-    Radio2.setText(preguntas.get(0).getOpciones().get(2).getTituloOpc());  
-    Radio3.setText(preguntas.get(0).getOpciones().get(3).getTituloOpc());
     
     }
 
@@ -182,6 +182,8 @@ JRadioButton radios []=new JRadioButton[4];
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        numero++;
+        iniciarTodas();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -232,4 +234,25 @@ JRadioButton radios []=new JRadioButton[4];
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+public void iniciarTodas(){
+    if(numero <preguntas.size()){
+        radios[0]=Radio0;
+        radios[1]=Radio1;
+        radios[2]=Radio2;
+        radios[3]=Radio3;
+        ArrayList<Pregunta> preguntas=GeneradoPreguntas.obtenerPreguntas();
+        Pregunta.setText(preguntas.get(numero).getTitulo());
+        
+        Radio0.setText(preguntas.get(numero).getOpciones().get(0).getTituloOpc());
+        Radio1.setText(preguntas.get(numero).getOpciones().get(1).getTituloOpc());
+        Radio2.setText(preguntas.get(numero).getOpciones().get(2).getTituloOpc());
+        Radio3.setText(preguntas.get(numero).getOpciones().get(3).getTituloOpc());
+        
+    }
+    
+    
+}
+
+
 }
