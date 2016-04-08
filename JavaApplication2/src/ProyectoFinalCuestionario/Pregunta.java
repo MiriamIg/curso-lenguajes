@@ -12,6 +12,7 @@ import java.util.*;
 public class Pregunta {
     private String pregunta;
     private ArrayList<Opcion> opciones;
+    
 
     public Pregunta(String pregunta, ArrayList<Opcion> opciones) {
         this.pregunta = pregunta;
