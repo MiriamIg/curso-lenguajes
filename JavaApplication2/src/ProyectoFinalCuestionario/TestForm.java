@@ -6,6 +6,7 @@
 package ProyectoFinalCuestionario;
 import java.util.*;
 import javax.swing.JRadioButton;
+
 /**
  *
  * @author Miriam
@@ -14,12 +15,14 @@ public class TestForm extends javax.swing.JFrame {
     ArrayList<Pregunta> preguntas;
     JRadioButton radios[]=new JRadioButton[3];
     int puntaje;
+    int numeroPregunta;
 
     /**
      * Creates new form TestForm
      */
     public TestForm() {
         initComponents();
+        PonerPreguntas();
     }
 
     /**
@@ -33,30 +36,33 @@ public class TestForm extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        Radio0 = new javax.swing.JRadioButton();
+        Radio1 = new javax.swing.JRadioButton();
+        Radio2 = new javax.swing.JRadioButton();
         Siguiente = new javax.swing.JButton();
+        EtiquetaPregunta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("¿Que villano eres?");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("jRadioButton1");
+        buttonGroup1.add(Radio0);
+        Radio0.setText("jRadioButton1");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("jRadioButton2");
+        buttonGroup1.add(Radio1);
+        Radio1.setText("jRadioButton2");
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("jRadioButton3");
+        buttonGroup1.add(Radio2);
+        Radio2.setText("jRadioButton3");
 
-        Siguiente.setText("jButton1");
+        Siguiente.setText("Sigue");
         Siguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SiguienteActionPerformed(evt);
             }
         });
+
+        EtiquetaPregunta.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,30 +74,35 @@ public class TestForm extends javax.swing.JFrame {
                         .addGap(180, 180, 180)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton3)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(Siguiente)))
-                .addContainerGap(133, Short.MAX_VALUE))
+                        .addGap(52, 52, 52)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Radio1)
+                                .addComponent(Radio0)
+                                .addComponent(Radio2))
+                            .addComponent(EtiquetaPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(84, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Siguiente)
+                .addGap(174, 174, 174))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
-                .addComponent(jRadioButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(EtiquetaPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Radio0)
                 .addGap(13, 13, 13)
-                .addComponent(jRadioButton2)
+                .addComponent(Radio1)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton3)
-                .addGap(18, 18, 18)
+                .addComponent(Radio2)
+                .addGap(33, 33, 33)
                 .addComponent(Siguiente)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -101,7 +112,7 @@ public class TestForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        puntaje=
+        //puntaje=
     }//GEN-LAST:event_SiguienteActionPerformed
 
     /**
@@ -140,11 +151,24 @@ public class TestForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel EtiquetaPregunta;
+    private javax.swing.JRadioButton Radio0;
+    private javax.swing.JRadioButton Radio1;
+    private javax.swing.JRadioButton Radio2;
     private javax.swing.JButton Siguiente;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     // End of variables declaration//GEN-END:variables
+
+public void PonerPreguntas(){
+radios[0]=Radio0;
+radios[1]=Radio1;
+radios[2]=Radio2;
+
+ArrayList<Pregunta> preguntas= Arreglo.obtenerPregunta();
+        EtiquetaPregunta.setText(preguntas.get(numeroPregunta).getPregunta());
+
+
+}
+
 }
