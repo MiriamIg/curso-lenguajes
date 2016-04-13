@@ -12,6 +12,7 @@ package ProyectoFinalCuestionario;
 public class Opcion {
     private String opc;
     private int puntos;
+    
 
     public Opcion(String opc, int puntos) {
         this.opc = opc;

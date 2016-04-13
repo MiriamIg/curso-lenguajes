@@ -6,7 +6,7 @@
 package ProyectoFinalCuestionario;
 import java.util.*;
 import javax.swing.JRadioButton;
-
+import javax.swing.*;
 /**
  *
  * @author Miriam
@@ -15,13 +15,16 @@ public class TestForm extends javax.swing.JFrame {
     ArrayList<Pregunta> preguntas;
     JRadioButton radios[]=new JRadioButton[3];
     int puntaje;
-    int numeroPregunta;
+    int numeroPregunta=0;
 
     /**
      * Creates new form TestForm
      */
     public TestForm() {
+        
+        preguntas=Arreglo.obtenerPregunta();
         initComponents();
+        
         PonerPreguntas();
     }
 
@@ -110,9 +113,9 @@ public class TestForm extends javax.swing.JFrame {
 
     private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
         // TODO add your handling code here:
-        
-        
-        //puntaje=
+        numeroPregunta ++;
+        PonerPreguntas();
+       //puntaje=Arreglo.obtenerPregunta();
     }//GEN-LAST:event_SiguienteActionPerformed
 
     /**
@@ -161,14 +164,24 @@ public class TestForm extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 public void PonerPreguntas(){
+    if(numeroPregunta<preguntas.size()){
 radios[0]=Radio0;
 radios[1]=Radio1;
 radios[2]=Radio2;
 
 ArrayList<Pregunta> preguntas= Arreglo.obtenerPregunta();
         EtiquetaPregunta.setText(preguntas.get(numeroPregunta).getPregunta());
+        
+            Radio0.setText(preguntas.get(numeroPregunta).getOpciones().get(0).getOpc());
+            Radio1.setText(preguntas.get(numeroPregunta).getOpciones().get(1).getOpc());
+            Radio2.setText(preguntas.get(numeroPregunta).getOpciones().get(2).getOpc());
+            
+            
 
-
+    }
+    if(numeroPregunta==preguntas.size()){
+    JOptionPane.showMessageDialog(this, "Resultado!! Villano -->");
+    }
 }
 
 }
