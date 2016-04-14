@@ -115,7 +115,7 @@ public class TestForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         numeroPregunta ++;
         PonerPreguntas();
-       //puntaje=Arreglo.obtenerPregunta();
+      // puntaje=Arreglo.obtenerPregunta();
     }//GEN-LAST:event_SiguienteActionPerformed
 
     /**
