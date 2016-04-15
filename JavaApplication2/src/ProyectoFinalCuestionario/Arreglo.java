@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ProyectoFinalCuestionario;
-import com.oracle.jrockit.jfr.DataType;
+
 import java.util.*;
 import javax.swing.JRadioButton;
 
@@ -118,14 +118,14 @@ public class Arreglo {
                             
 }
 
-public static int checarRespuesta(Pregunta p,JRadioButton[]radios){
+public static int acumularPuntos(Pregunta p,JRadioButton[]radios){
 
 int  puntos=0;
 String seleccion="";
-    
+
         for(JRadioButton radio:radios){
             if(radio.isSelected()){
-                //Arreglo.obtenerPregunta(get)
+               seleccion=radio.getText();
              
                 }
 
