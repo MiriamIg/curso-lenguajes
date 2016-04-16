@@ -14,7 +14,7 @@ import javax.swing.*;
 public class TestForm extends javax.swing.JFrame {
     ArrayList<Pregunta> preguntas;
     JRadioButton radios[]=new JRadioButton[3];
-    int puntaje;
+    static int  puntaje;
     int numeroPregunta=0;
 
     /**
@@ -176,6 +176,13 @@ ArrayList<Pregunta> preguntas= Arreglo.obtenerPregunta();
             Radio1.setText(preguntas.get(numeroPregunta).getOpciones().get(1).getOpc());
             Radio2.setText(preguntas.get(numeroPregunta).getOpciones().get(2).getOpc());
             
+            for(int i=0;i<3;i++){
+        if(radios[i].isSelected()){
+        puntaje=puntaje+    preguntas.get(numeroPregunta).getOpciones().get(i).getPuntos();
+            System.out.println("El acumulado es: "+puntaje);
+        }
+        }
+              
             
 
     }
