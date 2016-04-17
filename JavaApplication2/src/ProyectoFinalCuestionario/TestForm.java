@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package ProyectoFinalCuestionario;
+import java.awt.Color;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JRadioButton;
 import javax.swing.*;
 /**
@@ -15,17 +18,54 @@ public class TestForm extends javax.swing.JFrame {
     ArrayList<Pregunta> preguntas;
     JRadioButton radios[]=new JRadioButton[3];
     static int  puntaje;
+    String villano="";
     int numeroPregunta=0;
-
+    int tiempo=60; 
     /**
      * Creates new form TestForm
      */
     public TestForm() {
-        
+       
+      
         preguntas=Arreglo.obtenerPregunta();
         initComponents();
+         PonerPreguntas(); 
         
-        PonerPreguntas();
+        Thread t1=new Thread(new Runnable(){
+            @Override
+            
+            public void run(){
+                while(true){
+                tiempo --;
+                etiquetaReloj.setText("" +tiempo);
+                
+                
+                if(tiempo<10 ){
+               etiquetaReloj.setForeground(Color.red);
+                etiquetaReloj.setText("" +tiempo);
+                    if(tiempo<=0){
+         
+                        dispose();
+                    }
+                }
+                
+                    
+                
+                  try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(TestForm.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                
+            
+                 }
+                
+            }
+            
+        });
+       
+        t1.start();
+      
     }
 
     /**
@@ -44,6 +84,7 @@ public class TestForm extends javax.swing.JFrame {
         Radio2 = new javax.swing.JRadioButton();
         Siguiente = new javax.swing.JButton();
         EtiquetaPregunta = new javax.swing.JLabel();
+        etiquetaReloj = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,12 +92,18 @@ public class TestForm extends javax.swing.JFrame {
 
         buttonGroup1.add(Radio0);
         Radio0.setText("jRadioButton1");
+        Radio0.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Radio0.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         buttonGroup1.add(Radio1);
         Radio1.setText("jRadioButton2");
+        Radio1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Radio1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         buttonGroup1.add(Radio2);
         Radio2.setText("jRadioButton3");
+        Radio2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Radio2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         Siguiente.setText("Sigue");
         Siguiente.addActionListener(new java.awt.event.ActionListener() {
@@ -66,6 +113,8 @@ public class TestForm extends javax.swing.JFrame {
         });
 
         EtiquetaPregunta.setText("jLabel2");
+
+        etiquetaReloj.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,15 +136,22 @@ public class TestForm extends javax.swing.JFrame {
                 .addContainerGap(84, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Siguiente)
-                .addGap(174, 174, 174))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Siguiente)
+                        .addGap(174, 174, 174))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(etiquetaReloj)
+                        .addGap(113, 113, 113))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(etiquetaReloj)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EtiquetaPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Radio0)
@@ -115,7 +171,7 @@ public class TestForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         numeroPregunta ++;
         PonerPreguntas();
-      // puntaje=Arreglo.obtenerPregunta();
+      // puntaje=Arreglo.obtenerPregunta();}
     }//GEN-LAST:event_SiguienteActionPerformed
 
     /**
@@ -160,14 +216,16 @@ public class TestForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton Radio2;
     private javax.swing.JButton Siguiente;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel etiquetaReloj;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
 public void PonerPreguntas(){
-    if(numeroPregunta<preguntas.size()){
-radios[0]=Radio0;
-radios[1]=Radio1;
-radios[2]=Radio2;
+    
+if(numeroPregunta<preguntas.size()){
+    radios[0]=Radio0;
+    radios[1]=Radio1;
+    radios[2]=Radio2;
 
 ArrayList<Pregunta> preguntas= Arreglo.obtenerPregunta();
         EtiquetaPregunta.setText(preguntas.get(numeroPregunta).getPregunta());
@@ -175,20 +233,31 @@ ArrayList<Pregunta> preguntas= Arreglo.obtenerPregunta();
             Radio0.setText(preguntas.get(numeroPregunta).getOpciones().get(0).getOpc());
             Radio1.setText(preguntas.get(numeroPregunta).getOpciones().get(1).getOpc());
             Radio2.setText(preguntas.get(numeroPregunta).getOpciones().get(2).getOpc());
-            
-            for(int i=0;i<3;i++){
-        if(radios[i].isSelected()){
-        puntaje=puntaje+    preguntas.get(numeroPregunta).getOpciones().get(i).getPuntos();
-            System.out.println("El acumulado es: "+puntaje);
-        }
-        }
-              
-            
 
+            for(int i=0;i<3;i++){
+            if(radios[i].isSelected()){
+                puntaje=puntaje + preguntas.get(numeroPregunta).getOpciones().get(i).getPuntos();
+               
+                System.out.println(puntaje);
+            }
+        }
+      }
+
+   if( numeroPregunta==preguntas.size()){
+        if(puntaje<8)
+        {villano="El Guasón";}
+        
+        if(puntaje>8 & puntaje<15)  
+       {villano="Freddy";}
+       
+        if(puntaje>=15)
+       {villano="Chucky";}
+        System.out.println(villano);
+       
+               
     }
-    if(numeroPregunta==preguntas.size()){
-    JOptionPane.showMessageDialog(this, "Resultado!! Villano -->");
-    }
-}
+             
+
+  }
 
 }

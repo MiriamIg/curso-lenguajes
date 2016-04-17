@@ -13,15 +13,14 @@ import javax.swing.JRadioButton;
  * @author Miriam
  */
 public class Arreglo {
-    private int puntos;
     public static ArrayList<Pregunta> obtenerPregunta(){
        
         
         
       //OPCIONES   
-        Opcion opc1p1=new Opcion("es muy importante para mi,dedico tiempo a elegir mi ropa", 1);
-        Opcion opc2p1=new Opcion("intento no vestir mal,pero no es algo que me preocupe mucho", 2);
-        Opcion opc3p1=new Opcion("No es algo que me preocupa", 3);
+        Opcion opc1p1=new Opcion("es muy importante,dedico tiempo a elegir mi ropa", 1);
+        Opcion opc2p1=new Opcion("no visto mal,pero no es algo que me preocupe mucho", 2);
+        Opcion opc3p1=new Opcion("No me preocupa", 3);
         
         ArrayList<Opcion> opcionesp1=new ArrayList<>();
                            opcionesp1.add(opc1p1);
@@ -29,7 +28,7 @@ public class Arreglo {
                            opcionesp1.add(opc3p1);
                            
                            
-        Opcion opc1p2=new Opcion("..mantego la calma y evitar la confrontacion directa", 1);
+        Opcion opc1p2=new Opcion("..mantego la calma y evito la confrontacion directa", 1);
         Opcion opc2p2=new Opcion("..en ocasiones pierdo el control", 2);
         Opcion opc3p2=new Opcion("..me enfado con facilidad", 3);
         
@@ -51,7 +50,7 @@ public class Arreglo {
                            
                            
         Opcion opc1p4=new Opcion("Muy estable", 1);
-        Opcion opc2p4=new Opcion("Bastante,a veces tengo altibajos ", 2);
+        Opcion opc2p4=new Opcion("A veces tengo altibajos ", 2);
         Opcion  opc3p4=new Opcion("Muy variable", 3);
         
           
@@ -73,8 +72,8 @@ public class Arreglo {
                            
                            
                            
-        Opcion opc1p6=new Opcion("Prefieres trabajar solo, solo asi se hacen las coas bien ", 1);
-        Opcion opc2p6=new Opcion("consigues un grupo reducido de fieles que te acompañen y hagan el tranao sucio", 2);
+        Opcion opc1p6=new Opcion("Prefieres trabajar solo, asi se hacen las coas bien ", 1);
+        Opcion opc2p6=new Opcion("consigues un grupode fieles que hagan el trabajo sucio", 2);
         Opcion opc3p6=new Opcion("Intentas coseguir multitudes que luchen por ti", 3);
         
           
@@ -116,38 +115,5 @@ public class Arreglo {
        return preguntas;
        
                             
-}
-
-public static int acumularPuntos(Pregunta p,JRadioButton[]radios){
-
-int  puntos=0;
-String seleccion="";
-
-        for(JRadioButton radio:radios){
-            if(radio.isSelected()){
-               seleccion=radio.getText();
-             
-                }
-
-        }
-        
-       
-
-      
- 
-    return puntos;    
-}
-
-        
-
-
-    public int getPuntos() {
-        return puntos;
-    }
-
-    public void setPuntos(int puntos) {
-        this.puntos = puntos;
-    }
-    
-    
+}    
 }
