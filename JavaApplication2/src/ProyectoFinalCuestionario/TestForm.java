@@ -36,29 +36,21 @@ public class TestForm extends javax.swing.JFrame {
             
             public void run(){
                 while(true){
-                tiempo --;
-                etiquetaReloj.setText("" +tiempo);
+                    tiempo --;
+                    etiquetaReloj.setText("" +tiempo);
                 
                 
                 if(tiempo<10 ){
-               etiquetaReloj.setForeground(Color.red);
-                etiquetaReloj.setText("" +tiempo);
-                    if(tiempo<=0){
-         
-                        dispose();
-                    }
+                    etiquetaReloj.setForeground(Color.red);
+                    etiquetaReloj.setText("" +tiempo);
+                    if(tiempo<=0){dispose();}
                 }
-                
-                    
-                
+               
                   try {
                         Thread.sleep(500);
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(TestForm.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                
-            
-                 }
+                      } catch (InterruptedException ex) {
+                        Logger.getLogger(TestForm.class.getName()).log(Level.SEVERE, null, ex);}
+               }
                 
             }
             
@@ -252,7 +244,7 @@ ArrayList<Pregunta> preguntas= Arreglo.obtenerPregunta();
        
         if(puntaje>=15)
        {villano="Chucky";}
-        System.out.println(villano);
+       JOptionPane.showMessageDialog(this, "Tu eres el villano" + villano);
        
                
     }
