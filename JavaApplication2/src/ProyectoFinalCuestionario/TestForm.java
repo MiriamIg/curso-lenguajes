@@ -7,8 +7,7 @@ package ProyectoFinalCuestionario;
 import java.awt.Color;
 import java.util.*;
 import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JRadioButton;
+import java.util.logging.Logger;    
 import javax.swing.*;
 /**
  *
@@ -245,6 +244,7 @@ ArrayList<Pregunta> preguntas= Arreglo.obtenerPregunta();
         if(puntaje>=15)
        {villano="Chucky";}
        JOptionPane.showMessageDialog(this, "Tu eres el villano" + villano);
+        System.exit(WIDTH);
        
                
     }

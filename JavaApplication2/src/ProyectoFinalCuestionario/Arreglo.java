@@ -14,8 +14,6 @@ import javax.swing.JRadioButton;
  */
 public class Arreglo {
     public static ArrayList<Pregunta> obtenerPregunta(){
-       
-        
         
       //OPCIONES   
         Opcion opc1p1=new Opcion("es muy importante,dedico tiempo a elegir mi ropa", 1);
@@ -35,7 +33,7 @@ public class Arreglo {
         ArrayList<Opcion> opcionesp2=new ArrayList<>();
                            opcionesp2.add(opc1p2);
                            opcionesp2.add(opc2p2);
-                           opcionesp2.add(opc3p2);
+                           opcionesp2.add(opc3p2);      
         
                           
         Opcion opc1p3=new Opcion("de estrategia y planificacion como ajedez,videojuegos", 1);
